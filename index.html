@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancún, Quintana Roo - Paraíso Caribeño</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Variables de colores y estilos globales */
+        :root {
+            --color-arena: #F4E4BC;
+            --color-arena-claro: #F9F3E5;
+            --color-turquesa: #40E0D0;
+            --color-turquesa-oscuro: #20B2AA;
+            --color-azul-mar: #1E88E5;
+            --color-azul-oscuro: #0D47A1;
+            --color-azul-claro: #E3F2FD;
+            --color-blanco: #FFFFFF;
+            --color-texto: #333333;
+            --sombra-suave: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transicion: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: var(--color-arena-claro);
+            color: var(--color-texto);
+            line-height: 1.6;
+        }
+        
+        /* Estilos del encabezado */
+        header {
+            background: linear-gradient(to right, var(--color-turquesa), var(--color-turquesa-oscuro));
+            color: var(--color-blanco);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--sombra-suave);
+        }
+        
+        .contenedor {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .encabezado-contenido {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: var(--color-arena);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: var(--color-blanco);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transicion);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Estilos del hero section */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(64, 224, 208, 0.3), rgba(32, 178, 170, 0.5)), 
+                        url('https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-blanco);
+            padding: 2rem;
+        }
+        
+        .hero-contenido {
+            max-width: 800px;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 3rem;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .boton {
+            display: inline-block;
+            background-color: var(--color-arena);
+            color: var(--color-azul-oscuro);
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transicion);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        
+        .boton:hover {
+            background-color: var(--color-blanco);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Sección de información dividida */
+        .division-pantalla {
+            display: flex;
+            min-height: 500px;
+        }
+        
+        .division-imagen {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .division-contenido {
+            flex: 1;
+            padding: 4rem 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .division-1 .division-imagen {
+            background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80');
+        }
+        
+        .division-2 .division-imagen {
+            background-image: url('https://images.unsplash.com/photo-1599640842225-85d111c20e3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80');
+            order: 2;
+        }
+        
+        .division-2 .division-contenido {
+            order: 1;
+        }
+        
+        .division-contenido h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-turquesa-oscuro);
+            text-align: center;
+        }
+        
+        .division-contenido p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            line-height: 1.8;
+        }
+        
+        .division-contenido .boton {
+            align-self: center;
+            margin-top: 1rem;
+        }
+        
+        /* Sección de características */
+        .caracteristicas {
+            padding: 5rem 0;
+            background-color: var(--color-blanco);
+        }
+        
+        .seccion-titulo {
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--color-turquesa-oscuro);
+        }
+        
+        .seccion-titulo h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .seccion-titulo h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--color-turquesa);
+            border-radius: 2px;
+        }
+        
+        .seccion-titulo p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--color-texto);
+            font-size: 1.2rem;
+        }
+        
+        .caracteristicas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .caracteristica {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            background-color: var(--color-azul-claro);
+            transition: var(--transicion);
+            box-shadow: var(--sombra-suave);
+        }
+        
+        .caracteristica:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .caracteristica i {
+            font-size: 3.5rem;
+            color: var(--color-turquesa);
+            margin-bottom: 1.5rem;
+        }
+        
+        .caracteristica h3 {
+            margin-bottom: 1rem;
+            color: var(--color-turquesa-oscuro);
+            font-size: 1.5rem;
+        }
+        
+        .caracteristica p {
+            color: var(--color-texto);
+        }
+        
+        /* Sección de galería */
+        .galeria {
+            padding: 5rem 0;
+            background-color: var(--color-arena-claro);
+        }
+        
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .galeria-item {
+            height: 280px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicion);
+        }
+        
+        .galeria-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transicion);
+        }
+        
+        .galeria-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .galeria-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: var(--color-blanco);
+            padding: 1.5rem;
+            transform: translateY(0);
+            transition: var(--transicion);
+        }
+        
+        .galeria-item .overlay h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .galeria-item .overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Sección de video */
+        .video-section {
+            padding: 5rem 0;
+            background-color: var(--color-blanco);
+            text-align: center;
+        }
+        
+        .video-contenedor {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        .video-contenedor::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--color-turquesa), var(--color-azul-mar));
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .video-contenedor iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            display: block;
+        }
+        
+        /* Sección de enlaces externos */
+        .enlaces {
+            padding: 5rem 0;
+            background-color: var(--color-azul-claro);
+        }
+        
+        .enlaces-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .enlace-item {
+            background-color: var(--color-blanco);
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicion);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .enlace-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .enlace-item i {
+            font-size: 3rem;
+            color: var(--color-turquesa);
+            margin-bottom: 1.5rem;
+        }
+        
+        .enlace-item h3 {
+            margin-bottom: 1rem;
+            color: var(--color-turquesa-oscuro);
+            font-size: 1.4rem;
+        }
+        
+        .enlace-item p {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .enlace-item a {
+            color: var(--color-turquesa-oscuro);
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin-top: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid var(--color-turquesa);
+            border-radius: 30px;
+            transition: var(--transicion);
+        }
+        
+        .enlace-item a:hover {
+            background-color: var(--color-turquesa);
+            color: var(--color-blanco);
+        }
+        
+        .enlaces-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            width: 100%;
+        }
+        
+        /* Pie de página */
+        footer {
+            background: linear-gradient(to right, var(--color-turquesa), var(--color-turquesa-oscuro));
+            color: var(--color-blanco);
+            padding: 4rem 0 1.5rem;
+        }
+        
+        .footer-contenido {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-col h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--color-arena);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-col ul li i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .footer-col a {
+            color: var(--color-blanco);
+            text-decoration: none;
+            transition: var(--transicion);
+        }
+        
+        .footer-col a:hover {
+            color: var(--color-arena);
+            padding-left: 5px;
+        }
+        
+        .redes-sociales {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .redes-sociales a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transicion);
+        }
+        
+        .redes-sociales a:hover {
+            background-color: var(--color-arena);
+            color: var(--color-turquesa-oscuro);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .encabezado-contenido {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .hero {
+                height: 80vh;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .seccion-titulo h2 {
+                font-size: 2.2rem;
+            }
+            
+            .division-pantalla {
+                flex-direction: column;
+            }
+            
+            .division-2 .division-imagen {
+                order: 1;
+            }
+            
+            .division-2 .division-contenido {
+                order: 2;
+            }
+            
+            .division-imagen {
+                min-height: 300px;
+            }
+            
+            .division-contenido {
+                padding: 3rem 1.5rem;
+            }
+            
+            .video-contenedor iframe {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-contenido {
+                padding: 2rem 1.5rem;
+            }
+            
+            .seccion-titulo h2 {
+                font-size: 1.8rem;
+            }
+            
+            .caracteristica, .enlace-item {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="contenedor">
+            <div class="encabezado-contenido">
+                <div class="logo">
+                    <i class="fas fa-umbrella-beach"></i>
+                    <span>Cancún, Quintana Roo</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#divisiones">Atractivos</a></li>
+                        <li><a href="#caracteristicas">Actividades</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#video">Video</a></li>
+                        <li><a href="#enlaces">Recursos</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section class="hero" id="inicio">
+        <div class="hero-contenido">
+            <h1>Descubre Cancún, Quintana Roo</h1>
+            <p>El paraíso caribeño mexicano con aguas turquesa, arena blanca y una cultura milenaria.</p>
+            <a href="#divisiones" class="boton">Explorar Cancún</a>
+        </div>
+    </section>
+
+    <!-- Sección de división de pantalla 1 -->
+    <section class="division-pantalla division-1" id="divisiones">
+        <div class="division-imagen"></div>
+        <div class="division-contenido">
+            <h2>Playas de Ensueño</h2>
+            <p>Cancún es famoso por sus impresionantes playas de arena blanca y aguas cristalinas en tonos turquesa. La Zona Hotelera, una franja de 22 km de largo, alberga algunas de las playas más hermosas del Caribe mexicano.</p>
+            <p>Playa Delfines, Playa Tortugas y Playa Chac Mool son solo algunas de las joyas que esperan ser descubiertas. Cada una ofrece una experiencia única, desde la tranquilidad de sus aguas hasta la vibrante vida marina.</p>
+            <a href="#galeria" class="boton">Ver Galería</a>
+        </div>
+    </section>
+
+    <!-- Sección de división de pantalla 2 -->
+    <section class="division-pantalla division-2">
+        <div class="division-imagen"></div>
+        <div class="division-contenido">
+            <h2>Cultura Maya y Aventura</h2>
+            <p>Cancún no es solo playa. A poca distancia se encuentran impresionantes sitios arqueológicos mayas como Tulum, Cobá y Chichén Itzá, una de las Nuevas Maravillas del Mundo.</p>
+            <p>Además, podrás explorar espectaculares cenotes, practicar snorkel en el segundo arrecife de coral más grande del mundo, o disfrutar de emocionantes parques temáticos como Xcaret y Xel-Há.</p>
+            <a href="#enlaces" class="boton">Planificar Visita</a>
+        </div>
+    </section>
+
+    <!-- Sección de características -->
+    <section class="caracteristicas" id="caracteristicas">
+        <div class="contenedor">
+            <div class="seccion-titulo">
+                <h2>Actividades en Cancún</h2>
+                <p>Descubre todo lo que puedes hacer en este paraíso caribeño.</p>
+            </div>
+            <div class="caracteristicas-grid">
+                <div class="caracteristica">
+                    <i class="fas fa-water"></i>
+                    <h3>Deportes Acuáticos</h3>
+                    <p>Desde snorkel y buceo hasta jet ski y parasailing. Explora el vibrante mundo marino del Caribe.</p>
+                </div>
+                <div class="caracteristica">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Gastronomía Local</h3>
+                    <p>Disfruta de la deliciosa cocina yucateca y mariscos frescos en restaurantes con vista al mar.</p>
+                </div>
+                <div class="caracteristica">
+                    <i class="fas fa-monument"></i>
+                    <h3>Ecoturismo</h3>
+                    <p>Visita reservas naturales, nadar en cenotes y explorar la selva maya.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Galería -->
+    <section class="galeria" id="galeria">
+        <div class="contenedor">
+            <div class="seccion-titulo">
+                <h2>Galería de Cancún</h2>
+                <p>Un vistazo a la belleza de este paraíso caribeño.</p>
+            </div>
+            <div class="galeria-grid">
+                <div class="galeria-item">
+                    <img src="img/playadelfines.jpg" alt="Playa de Cancún">
+                    <div class="overlay">
+                        <h3>Playa Delfines</h3>
+                        <p>Arena blanca y aguas cristalinas</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="img/zonahotelera.jpg" alt="Zona Hotelera">
+                    <div class="overlay">
+                        <h3>Zona Hotelera</h3>
+                        <p>Hoteles de lujo frente al mar</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="img/tulum.jpg" alt="Ruinas mayas">
+                    <div class="overlay">
+                        <h3>Tulum</h3>
+                        <p>Ruinas mayas frente al mar</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="img/cenotes.jpg" alt="Cenote">
+                    <div class="overlay">
+                        <h3>Cenotes</h3>
+                        <p>Piscinas naturales únicas</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="img/vidanocturna.jpg" alt="Vida nocturna">
+                    <div class="overlay">
+                        <h3>Vida Nocturna</h3>
+                        <p>Diversión y entretenimiento</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="img/gastronimia.jpg" alt="Gastronomía">
+                    <div class="overlay">
+                        <h3>Gastronomía</h3>
+                        <p>Sabores del Caribe mexicano</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Video -->
+    <section class="video-section" id="video">
+        <div class="contenedor">
+            <div class="seccion-titulo">
+                <h2>Vive la Experiencia Cancún</h2>
+                <p>Descubre en video la magia de este destino caribeño.</p>
+            </div>
+            <div class="video-contenedor">
+                <!-- Video oficial de Cancún - URL CORREGIDA -->
+                <iframe src="https://www.youtube.com/embed/qzPjEo5Jog0" title="Video oficial de Cancún" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Enlaces Externos -->
+    <section class="enlaces" id="enlaces">
+        <div class="contenedor">
+            <div class="seccion-titulo">
+                <h2>Recursos para tu Viaje a Cancún</h2>
+                <p>Enlaces útiles para planificar tu visita a este paraíso caribeño.</p>
+            </div>
+            <div class="enlaces-grid">
+                <div class="enlace-item">
+                    <i class="fas fa-plane"></i>
+                    <h3>Vuelos a Cancún</h3>
+                    <p>Encuentra las mejores ofertas para volar al Aeropuerto Internacional de Cancún.</p>
+                    <div class="enlaces-links">
+                        <a href="https://www.aeromexico.com" target="_blank">Aeroméxico</a>
+                        <a href="https://www.vivaaerobus.com" target="_blank">Viva Aerobus</a>
+                    </div>
+                </div>
+                <div class="enlace-item">
+                    <i class="fas fa-hotel"></i>
+                    <h3>Hospedaje</h3>
+                    <p>Reserva en los mejores hoteles y resorts de la Zona Hotelera.</p>
+                    <div class="enlaces-links">
+                        <a href="https://www.booking.com" target="_blank">Booking.com</a>
+                        <a href="https://www.expedia.com" target="_blank">Expedia</a>
+                    </div>
+                </div>
+                <div class="enlace-item">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Tours y Actividades</h3>
+                    <p>Descubre tours a ruinas mayas, parques naturales y actividades acuáticas.</p>
+                    <div class="enlaces-links">
+                       <a href="https://www.getyourguide.com" target="_blank">GetYourGuide</a>
+                        <a href="https://www.xcaret.com" target="_blank">Parque Xcaret</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="contenedor">
+            <div class="footer-contenido">
+                <div class="footer-col">
+                    <h3>Cancún, Quintana Roo</h3>
+                    <p>El destino caribeño por excelencia de México, donde el mar turquesa se encuentra con la cultura milenaria maya.</p>
+                    <div class="redes-sociales">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#divisiones">Atractivos</a></li>
+                        <li><a href="#caracteristicas">Actividades</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#video">Video</a></li>
+                        <li><a href="#enlaces">Recursos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@cancunquintanaroo.com</li>
+                        <li><i class="fas fa-phone"></i> +52 998 123 4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Zona Hotelera, Cancún, Q.R.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Cancún, Quintana Roo. Todos los derechos reservados. | Sitio no oficial con fines educativos</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
